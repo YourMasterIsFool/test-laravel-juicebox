@@ -6,7 +6,9 @@
 /storage/*.key
 /storage/pail
 /vendor
-.env
+juice-box-db/ib_logfile*
+
+# .env
 .env.backup
 .env.production
 .phpactor.json
