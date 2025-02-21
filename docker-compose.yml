@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  
+  db:
+    image: mariadb:latest
+    ports:
+      - '3307:3306'
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: test-db
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+
+    networks:
+      - app-network
+    volumes:
+      - ./juice-box-db:/var/lib/mysql
+  
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+   
+volumes:
+  juice-box-db: 
+
+networks:
+  app-network:
