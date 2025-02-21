@@ -23,8 +23,8 @@ how to install project locally
   
 
 ### 2. Instalation
-```shell git clone https://github.com/YourMasterIsFool test-laravel-juicebox.git ```
-```shell cd test-laravel-juicebox ```
+1. ``` git clone https://github.com/YourMasterIsFool test-laravel-juicebox.git ```
+2. ``` cd test-laravel-juicebox ```
 
 if use docker 
 ``` docker compose up --build -d ```
@@ -39,11 +39,11 @@ DB_DATABASE={your mysql database}
 DB_USERNAME={your mysql username}
 DB_PASSWORD={your mysql password} 
 
-3. migrate database
+1. migrate database
    ``` php artisan migrate ```
-4. generate new  key
+2. generate new  key
     ``` php artisan key:generate ```
-5. running laravel server
+3. running laravel server
    ``` php artisan server --port 8899 ```
 
 
